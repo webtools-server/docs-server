@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<style>
+  html,
+  body,
+  ul,
+  li,
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    padding: 20px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .mod-list-title {
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+
+  .mod-doc-list a {
+    color: #2e8b57;
+  }
+
+  .mod-doc-list a:hover {
+    color: #2e7b00;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<h3 class="mod-list-title">文档列表</h3>
+<ul class="mod-doc-list">
+  {% for dir in dirs %}
+  <li><a href="/{{dir}}/index.html">{{dir}}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
