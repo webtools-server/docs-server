@@ -17,6 +17,10 @@ module.exports = (appInfo) => {
     dir: path.join(appInfo.baseDir, 'app/public'),
   };
 
+  config.multipart = {
+    fileSize: '50mb'
+  };
+
   config.view = {
     defaultViewEngine: 'nunjucks'
   };
