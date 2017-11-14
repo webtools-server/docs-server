@@ -1,3 +1,11 @@
+/**
+ * app
+ */
 
+process.env.NODE_ENV = 'production';
 
-module.exports = '文档服务';
+require('egg').startCluster({
+  baseDir: __dirname,
+  workers: 1,
+  port: process.env.PORT || 7004
+});

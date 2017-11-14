@@ -23,8 +23,11 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon",
-    "stop": "egg-scripts stop",
+    "pm2": "pm2 start index.js --name \"doc\"",
+    "restart": "pm2 restart doc",
+    "start": "NODE_ENV=production node index.js",
+    "start:scripts": "egg-scripts start --daemon --port=7004",
+    "stop:scripts": "egg-scripts stop",
     "dev": "egg-bin dev",
     "release": "sh release.sh",
     "test": "npm run lint -- --fix && npm run test-local",

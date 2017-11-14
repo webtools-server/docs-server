@@ -25,4 +25,4 @@ cp -vr "$workdir/config" "$releasedir/config"
 echo "entering $releasedir & scp"
 cd $releasedir
 
-scp -P 36000 -r ./ root@172.16.1.10:/data1/fe_www/docs-server
+scp -r ./ root@172.16.1.118:/data/www/docs-server
