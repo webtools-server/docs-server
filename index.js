@@ -2,7 +2,7 @@
  * app
  */
 
-process.env.NODE_ENV = 'production';
+process.env.EGG_SERVER_ENV = 'prod';
 
 require('egg').startCluster({
   baseDir: __dirname,
