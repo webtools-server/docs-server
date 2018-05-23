@@ -2,17 +2,9 @@
 
 {% block head %}
 <style>
-  html,
-  body,
-  ul,
-  li,
-  h3 {
+  html, body, ul, li, h1, h3, p {
     margin: 0;
     padding: 0;
-  }
-
-  body {
-    padding: 20px;
   }
 
   li {
@@ -23,26 +15,88 @@
     text-decoration: none;
   }
 
-  .mod-list-title {
-    margin-bottom: 10px;
-    font-weight: normal;
+  .top-wrapper {
+    box-sizing: border-box;
+    height: 48px;
+    line-height: 48px;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
-  .mod-doc-list a {
-    color: #2e8b57;
+  .top-product-name {
+    display: inline-block;
+    color: rgba(0, 0, 0, .54);
+    font: 400 20px/36px Google Sans,sans-serif;
+    margin: 0;
   }
 
-  .mod-doc-list a:hover {
-    color: #2e7b00;
+  .top-quick-start {
+    float: right;
+    font-size: 13px;
+    color: #039be5;
+    font-weight: bold;
+  }
+
+  .clearfix::after {
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .doc-list {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+  }
+
+  .doc-item {
+    float: left;
+    width: 300px;
+    height: 100px;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #eef1f6;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color .3s ease-in;
+  }
+
+  .doc-item:hover {
+    background-color: #fafafa;
+  }
+
+  .doc-item__title {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .doc-item__desc {
+    font-size: 13px;
+    color: #333;
   }
 </style>
 {% endblock %}
 
 {% block body %}
-<h3 class="mod-list-title">文档列表</h3>
-<ul class="mod-doc-list">
-  {% for dir in dirs %}
-  <li><a href="/{{dir}}/index.html">{{dir}}</a></li>
+<div class="top-wrapper">
+  <h1 class="top-product-name">Docs</h1>
+  <a class="top-quick-start" href="http://doc.fe.jyb.com/book/jfet-website/plugin/jfet-doc.html" target="_blank">快速接入</a>
+</div>
+<div class="doc-list clearfix">
+  {% for doc in docs %}
+  <a href="/{{doc.dir}}/index.html" class="doc-item">
+    <strong class="doc-item__title">{{doc.title}}</strong>
+    <p class="doc-item__desc">{{doc.desc}}</p>
+  </a>
   {% endfor %}
-</ul>
+</div>
 {% endblock %}
