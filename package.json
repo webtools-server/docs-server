@@ -4,7 +4,7 @@
   "description": "文档服务",
   "private": true,
   "dependencies": {
-    "decompress": "^4.2.0",
+    "decompress": "^4.2.1",
     "egg": "^1.7.0",
     "egg-scripts": "^1.0.0",
     "egg-view-nunjucks": "^2.1.3",
